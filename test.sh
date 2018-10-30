@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-out=$(./gohello)
+out=$(go run gohello.go)
 
 if [ "$out" == "hello" ]; then
 	echo good
