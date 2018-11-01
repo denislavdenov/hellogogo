@@ -4,10 +4,12 @@ script:
 - bash -x test.sh
 deploy:
   provider: releases
+  skip_cleanup: true 
+  overwrite: true
   api_key:
     secure: u72KQFyALDg8PlsXq5m1pB6BfL0LPIZmHvtzrG5y6JvZh9APCkmxfaJVZXrVFciO4RSWkPc2N7FTcTf6Tu0JuFORoO/WjOKm++c8O/CRhj0yc+gZ0xwo/68KVbQtJxjJYYTxZyCglJxtqQz8n9GVjGr8Xl//qCXaIErUV4FHN9IFkxqZsPkoZ0NEh13UqVshAfYl8r2QGNwvnkyVV4N02k4xOC0wAbwa7oS1a1LCui4y6bzFKHU8/qyiCQzBfGhuLTccOVvLu1lOAHKqr9iH9VD+BRRcReIRWhRvIH8Q2gQ+IrZ0KCD6XfQpkhpWwmbq9aOjKez4JmAd+F23wSjazKDHMrnr9EQ4fojn44xX21HDDSwyEXEdyYSivJ/xpiip022lWhGBYfen54fkMntur1LoVhjr5kIkMGiugQ01ojwIN5mLqst+qSIUvjqN7zPgDJaHpGHjkOcFpzR3bzI2B362mQYMchdYEWVqnWwvMt5ykILt1wlH6P1jG2aZaUkmLmuyb/NEAK7BFdFg6N+L6xq5juGZjz5iptejLI1BGGi3YqFiQlt5pNKF6Ux6sPzRnHfgU35o5dTK/Yhwbetm4pojYgd9TlwjZW7cyKGHtSx354SnIrngngSpqpqcwkV0SvVpb9889lVeJBTSXoC1Zx++H3vRiAwFqkxfniHuDjQ=
   file: $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/gohello
-  overwrite: true
   on:
     repo: denislavdenov/hellogogo
+    branch: master
     tags: true
