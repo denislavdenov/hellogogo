@@ -2,6 +2,8 @@ language: go
 script:
 - go build gohello.go
 - bash -x test.sh
+before_deploy:
+  - git checkout master
 deploy:
   provider: releases
   api_key:
@@ -10,3 +12,7 @@ deploy:
   on:
     repo: denislavdenov/hellogogo
     tags: true
+after_deploy:
+  - git add .
+  - git commit -m "adding file"
+  - git push origin master
