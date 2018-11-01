@@ -1,6 +1,6 @@
 language: go
 script:
-  go build gohello.go
+- go build gohello.go
 - bash -x test.sh
 deploy:
   provider: releases
